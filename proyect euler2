@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Multiplos de 3 y 5 menores a 1000</title>
+</head>
+<body>
+ <h1>Multiplos de 3 y 5 menores a 1000</h1>
+ <p>Numeros:</p>
+ <ul id="multiplesList"></ul>
+ <script>
+ function findMultiples() {
+ var multiplesList = document.getElementById("multiplesList");
+ multiplesList.innerHTML = ""; // Clear the list before populating
+ for (var i = 1; i < 1000; i++) {
+ if (i % 3 === 0 || i % 5 === 0) {
+ var listItem = document.createElement("li");
+ listItem.textContent = i;
+ multiplesList.appendChild(listItem);
+ }
+ }
+ }
+ // Call the function when the page loads
+ findMultiples();
+ </script>
+ <h1>Suma de estos multiplos</h1>
+ <p>Suma: <span id="sum"></span></p>
+ <ul id="multiplesList"></ul>
+ <script>
+ function findMultiplesAndSum() {
+ var sum = 0;
+ var multiplesList = document.getElementById("multiplesList");
+ var sumSpan = document.getElementById("sum");
+ multiplesList.innerHTML = ""; // Clear the list before populating
+ for (var i = 1; i < 1000; i++) {
+ if (i % 3 === 0 || i % 5 === 0) {
+ sum += i;
+ var listItem = document.createElement("li");
+ listItem.textContent = i;
+ multiplesList.appendChild(listItem);
+ }
+ }
+ sumSpan.textContent = sum;
+ }
+ // Call the function when the page loads
+ findMultiplesAndSum();
+ </script>
+</body>
+</html>
